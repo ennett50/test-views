@@ -1,0 +1,19 @@
+div.form-feedback
+	div.form-feedback-title Напишите нам
+	form.form-horizontal(method="POST", action=)
+		div.form-group
+			label(for="form-name-feedback" class="control-label form-inline") Ваше имя и фамилия
+			div.form-group-input
+				input(type="text" id="form-name-feedback").form-control
+		div.form-group
+			label(for="form-phone-feedback" class="control-label form-inline __double") Контактный телефон или
+				|электронная почта
+			div.form-group-input
+				input(type="text" id="form-phone-feedback").form-control
+		div.form-group
+			label(for="form-text-feedback" class="control-label form-inline") Текст сообщения
+			div.form-group-input
+				textarea(id="form-text-feedback").form-control
+		div.form-group-btn
+			input(type="submit", value="Отправить").button
+

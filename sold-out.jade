@@ -1,0 +1,39 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Каталог"
+	-var currentMainMenu = "Каталог"
+	-var catalogSubmenu = 'Бытовая техника'
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Каталог', 'Бытовая техника', 'Холодильник Bosch KGN 36VL10 Indesit BIA 18 S Indesit BIA 18 S'])
+
+
+	div.h1.align-center О, ужас!<br/>Товар был продан
+	div.sold-product
+		div.row
+			div.col-lg-8
+				div.sold-product-img
+					img(src="images/example/wl1.jpg", alt="")
+				div.sold-product-desc
+					a(href="#").sold-product-title <b>Холодильник</b> Bosch KGN 36VL10 Indesit BIA 18 S Indesit BIA 18 S
+					div.sold-product-article Арт. 000000
+			div.col-lg-4
+				div.sold-product-info
+					span.text Цена
+					span.price
+						| 20 000
+						span.ruble i
+				div.sold-product-status Продано
+
+	div.sold-product-attention
+		| Вы можете найти ему замену <a href="#">сами</a><br/>
+		| или проконсультироваться с оператором <br/>
+		| по телефону <b>8 (865) 777-70-70</b>
+
+
+
+block block-content-100
+	div.discount-products
+		div.container
+			include modules/discount-products

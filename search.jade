@@ -1,0 +1,44 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Результаты поиска"
+	-var currentMainMenu = "Результаты поиска"
+block title
+	title=currentPageTitle
+
+block block-content-100
+	div.search-result
+		div.container.filter-catalog.clearfix
+			div.left
+				div.search-result-text По запросу «<b>Холодильник Shark LED...</b>» найдено <b>180 результатов</b>
+				div.search-result-nav
+					span.search-result-nav-i.__current 25
+					!="\n"
+					span.search-result-sep |
+					!="\n"
+					a(href="#").search-result-nav-i 50
+					!="\n"
+					span.search-result-sep |
+					!="\n"
+					a(href="#").search-result-nav-i 70
+			div.right
+				input(type="checkbox", name="" id="product-discount")
+				label(for="product-discount") товары только со скидкой
+				div.filter-catalog-min_max
+					span фильтр:
+					!='\n'
+					a(href="#").falseLink.filter-catalog-item.__active по дате
+					!='\n'
+					span.filter-catalog-sep |
+					!='\n'
+					a(href="#").falseLink.filter-catalog-item по цене
+
+
+
+	div.container
+
+		div.row
+			include modules/products-cart
+			include modules/products-cart
+
+	include modules/pagination
+

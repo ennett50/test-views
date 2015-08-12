@@ -1,0 +1,16 @@
+div.new-products
+	if (currentPageTitle = "Карточка товара")
+		div.h1 Похожие товары
+	else
+		div.h1 Товары со скидкой
+
+	-var discount = true
+
+	div.row
+		include products-cart
+
+	div.btn-w
+		if (currentPageTitle = "Карточка товара")
+			a.button-info(href='catalog.html') посмотреть все
+		else
+			a.button-info(href='catalog.html') все скидки

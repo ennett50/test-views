@@ -1,0 +1,54 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Приемка"
+	-var currentMainMenu = "Приемка"
+block title
+	title=currentPageTitle
+block block-content
+
+	+breadcrumbsSimple(['Приемка', 'Форма приема товаров'])
+	h1.text-center Форма приема товаров
+	div.checkout.upload-file-block.js-file-block
+		form.form-horizontal(action='//rubaxa.org/FileAPI/server/ctrl.php', method='post', enctype='multipart/form-data')
+			div.checkout-item
+				div.form-group
+					label(for="form-checkout-name" class="control-label form-inline") Ваше имя и фамилия
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-name" )
+				div.form-group
+					label(for="form-checkout-phone" class="control-label form-inline") Контакный телефон
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-phone" ).js-phone-mask.small-control
+				div.form-group
+					label(for="form-checkout-mail" class="control-label form-inline") Электронаня почта
+					div.form-group-input
+						input(type="email" class="form-control " id="form-checkout-mail" ).small-control
+			div.checkout-item
+				div.form-group.has-error
+					label(for="form-checkout-name-item" class="control-label form-inline") Название товара
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-name-item" )
+				div.form-group
+					label(for="form-checkout-price" class="control-label form-inline") Цена
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-price" ).small-control
+				div.form-group
+					label(for="form-checkout-text" class="control-label form-inline") Примечание к заказу
+					div.form-group-input.clearfix
+						textarea(id="form-checkout-text").form-control
+						// //fileAPI  https://github.com/RubaXa/jquery.fileapi
+						div.file-block-content
+							div.title.js-dnd
+								div.button.file-button.js-dnd-not-supported.js-fileapi-wrapper
+									|Загрузить фото
+									input(type='file', name='filedata', multiple='')
+								div.file-block-text Максимальное количество 5 фотографий
+
+						div.js-files.b-upload__files
+							div.b-thumb(data-id='<%=uid%>', title='<%-name%>, <%-sizeText%>')
+								div(data-fileapi="file.remove" class="b-thumb__del") ✖
+								div.b-thumb__preview
+									div.b-thumb__preview__pic
+
+				div.checkout-btn
+					input(type="submit", value="Отправить").button

@@ -1,0 +1,57 @@
+footer.footer.js-footer
+	.footer-top
+		.container
+			.row
+				.col-md-9.hidden-xs
+					.footer-nav_w
+						nav.main-nav.__footer
+							-var mainMenu = []
+							-mainMenu[0] = {}
+							-mainMenu[0].title = 'О компании'
+							-mainMenu[0].href = 'about.html'
+
+							-mainMenu[1] = {}
+							-mainMenu[1].title = 'Каталог'
+							-mainMenu[1].href = 'catalog.html'
+
+							-mainMenu[2] = {}
+							-mainMenu[2].title = 'Акции'
+							-mainMenu[2].href = 'actions.html'
+
+							-mainMenu[3] = {}
+							-mainMenu[3].title = 'Оплата'
+							-mainMenu[3].href = 'payment.html'
+
+							-mainMenu[4] = {}
+							-mainMenu[4].title = 'Доставка'
+							-mainMenu[4].href = 'delivery.html'
+
+							-mainMenu[5] = {}
+							-mainMenu[5].title = 'Приемка'
+							-mainMenu[5].href = 'reception.html'
+
+							-mainMenu[6] = {}
+							-mainMenu[6].title = 'Контакты'
+							-mainMenu[6].href = 'contacts.html'
+
+							ul.clearfix.list-unstyled.main-nav-list
+								each item in mainMenu
+									li.main-nav-item
+										if item.title == currentMainMenu
+											span.main-nav-link.__current= item.title
+										else
+											a(href='#{item.href}').main-nav-link= item.title
+				.col-md-3.col-xs-12
+					.footer-phone_w.align-right
+						a.footer-phone(href='tel:+78657770707') <span>8 (865)</span> 777 07 07
+	div.footer-bottom
+		div.container
+			.row
+				.col-sm-7.col-xs-12
+					.footer-copyright
+						| ©2015 «Коробейникоф»&nbsp;
+						br.visible-xs-block
+						| Комиссионный магазин
+				.col-sm-5.align-right.col-xs-12
+					a.developers(href='http://granat-adv.ru/', target='_blank')
+						img(src="images/copyright.png" alt="")

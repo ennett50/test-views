@@ -1,0 +1,9 @@
+-var submenu = ['Мебель','Предметы интерьера','Музыкальные инструменты','Бытовая техника']
+
+div.submenu
+	each item in submenu
+		div.submenu-item
+			if(catalogSubmenu == item )
+				span.submenu-link.__current=item
+			else
+				a(href="subcatalog.html").submenu-link=item

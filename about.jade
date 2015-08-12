@@ -1,0 +1,75 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "О компании"
+	-var currentMainMenu = "О компании"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple([currentPageTitle])
+	h1 О компании
+	div.row
+		div.col-lg-8.col-md-8
+			p Заказать товар вы можете на нашем сайте <a href="http://www.ulmart.ru">www.ulmart.ru</a>, воспользовавшись
+				|системой web-резервирования.
+			p Вы можете осуществить покупку в системе web-резервирования www.ulmart.ru без регистрации. Для этого достаточно выбрать понравившийся вам товар в каталоге, положить его в виртуальную корзину и оформить покупку.
+			ol
+				li что-то отломилось;
+				li что-то надорвалось;
+				li но мы честные и вы можете нам доверять
+				li а вот авито и сомнительным ребятам доверя не стоит, это все знают.
+
+			p.left.__clear.width-50
+				img(src="images/example/about1.png", alt="")
+			p.right.__clear.width-50
+				img(src="images/example/about2.png", alt="")
+			div.clear
+
+			p Заказать товар вы можете на нашем сайте <a href="http://www.ulmart.ru">www.ulmart.ru</a>, воспользовавшись
+				|системой web-резервирования.
+			p Вы можете осуществить покупку в системе web-резервирования www.ulmart.ru без регистрации. Для этого достаточно выбрать понравившийся вам товар в каталоге, положить его в виртуальную корзину и оформить покупку.
+			ul
+				li что-то отломилось;
+				li что-то надорвалось;
+				li но мы честные и вы можете нам доверять
+				li а вот авито и сомнительным ребятам доверя не стоит, это все знают.
+
+
+block block-content-100
+	div.address-block
+		div.container
+			div.table
+				div.table-cell
+					div.address-block-info
+						span.address-block-title Юридический адрес
+						!='\n'
+						a(href="#" target='_blank').address-block-map Посмотреть на карте
+					p ООО "Вторая жизнь" — 190020, <nobr>Санкт-Петербург</nobr>, <br/>пр-кт Рижский,60 А, пом. 1-Н
+					p <b>Телефон</b> <a href="tel:+78657770707">8 (865) 777 07 07</a> <br/><b>Электронная почта</b>
+						|<a href="mailto:korobeinikoff@ya.ru">korobeinikoff@ya.ru</a>
+				div.table-cell
+					div.address-block-info
+						span.address-block-title Физический адрес
+						!='\n'
+						a(href="#" target='_blank').address-block-map Посмотреть на карте
+					p Санкт-Петербург, Балтийская, 56,
+					p <b>Телефон</b> <a href="tel:+78657770707">8 (865) 777 07 07</a> <br/><b>Электронная почта</b>
+						|<a href="mailto:korobeinikoff@ya.ru">korobeinikoff@ya.ru</a>
+
+	div.pattern-bg
+		div.container
+			div.social-links
+				span.social-links-title Мы в соцсетях
+				div.social-links-ctn
+					!='\n'
+					a(href="#", target="_blank").social-links-item.__vk
+					!='\n'
+					a(href="#", target="_blank").social-links-item.__insta
+					!='\n'
+					a(href="#", target="_blank").social-links-item.__fb
+					!='\n'
+					a(href="#", target="_blank").social-links-item.__twee
+					!='\n'
+					a(href="#", target="_blank").social-links-item.__ok
+
+
+

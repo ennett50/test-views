@@ -1,0 +1,30 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Ваша корзина"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Корзина'])
+	h1.align-center=currentPageTitle
+	p.align-center Вы не вошли в систему. <a href="#">Войдите</a>, чтобы зарезервировать эти товары или увидеть
+		| зарезервированные товары.
+
+	div.row
+		div.col-lg-8
+			p.text-center Ваша корзина пуста.
+		div.col-lg-4
+			div.reserve
+				div.reserve-header Забронированное
+				div.reserve-counter.__one-day.clearfix
+					span(class="js-timers", data-days="1")
+					!="\n"
+					span.reserve-counter-text до выкупа остался <b>1</b> день
+				div.reserve-cnt
+					include modules/reserve-item
+
+				div.reserve-counter.clearfix
+					span(class="js-timers", data-days="3")
+					!="\n"
+					span.reserve-counter-text до выкупа осталось <b>3</b> дня
+				div.reserve-cnt
+					include modules/reserve-item

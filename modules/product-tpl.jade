@@ -1,0 +1,28 @@
+div.col-md-3.col-sm-6.col-xs-12
+	div.products-cart.clearfix
+		a(href="product-card .html").products-cart-link
+			div.products-cart-img
+				if (discount)
+					span.discount(class="#{ item.discount == '-40%' ? '__style-1' : '__style-2' }")!=item.discount
+				img(class="img-responsive" src="images/example/pr#{index+1}.jpg" alt="")
+			div.products-cart-title!=item.title
+		div.products-cart_info
+			div.products-cart_info_status
+				div.products-cart_info_status_title состояние
+				div.products-cart_info_status_stars
+					span.full ☆
+					!='\n'
+					span.full ☆
+					!='\n'
+					span.full ☆
+					!='\n'
+					span.full ☆
+					!='\n'
+					span.empty ☆
+		div.products-cart_price.clearfix
+			span.old 30 000 <span class="ruble">i</span>
+			a.button(href='product-card .html')
+				span.button-visible
+					| 20 000
+					span.ruble i
+				span.button-hidden Подробнее

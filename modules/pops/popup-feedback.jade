@@ -1,0 +1,23 @@
+div.modal.fade#js-feedback-form.js-modal
+	div.modal-dialog
+		div.modal-content.modal-body
+			button.close(type='button', data-dismiss='modal', aria-label='Close')
+				span(aria-hidden='true') ×
+			h4.modal-title Обратный звонок
+			p Оставьте заявку на обратный звонок — менеджер перезвонит по указанному телефону в течении нескольких минут
+			form(method="POST", action="").form-horizontal
+				div.form-group.has-success
+					label(for="form-name" class="col-sm-5 control-label") Представьтесь
+					div.col-sm-7
+						input(type="text" class="form-control " id="form-name" )
+				div.form-group.has-error
+					label(for="form-phone" class="col-sm-5 control-label") Контактный телефон
+					div.col-sm-7
+						input(type="text" class="form-control " id="form-phone" ).js-phone-mask
+				div.form-group
+					label(for="form-text" class="col-sm-5 control-label") Примечание
+					div.col-sm-7
+						textarea(class="form-control " id="form-text")
+
+				div.form-horizontal-btn
+					input(type="submit", value="Перезвоните мне").button

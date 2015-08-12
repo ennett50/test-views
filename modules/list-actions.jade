@@ -1,0 +1,35 @@
+-var listActions = []
+-listActions[0] = {}
+-listActions[0].title = 'Ламповые <br/> вечера'
+-listActions[0].desc = '<p>При покупке кресла, торшер в подарок!</p><p>Акция длиться с 1 по 20 июля при покупке товаров с доставкой нашими грузиками.</p>'
+
+
+-listActions[1] = {}
+-listActions[1].title = 'Двенадцать <br/> стульев'
+-listActions[1].desc = '<p>Каждый последующий стул в чеке со скидкой 5%</p><p>Акция длиться с 1 по 20 июля при покупке товаров с доставкой нашими грузиками.</p>'
+div.list-actions
+	-for (var i=0;i<2;i++)
+		each item, index in listActions
+			div.list-actions-item
+				div.container.list-actions-block
+					div.row
+						div.col-lg-9
+							div.list-actions-detail
+								div.table-cell.__img
+									div.list-actions-img
+										img(src="images/example/action#{index+1}.png", alt="")
+								div.table-cell
+									div.list-actions-title!=item.title
+									!=item.desc
+						div.col-lg-3
+							div.list-actions-preview
+								div.watch-now.__actions
+									div.watch-now-container
+										div.watch-now-items
+											include what-now-list
+											include what-now-list
+											include what-now-list
+											include what-now-list
+										br
+										div.falseLink.js-all-actions <span>Показать товары по акции</span> <span
+											|class="count">(8)</span>

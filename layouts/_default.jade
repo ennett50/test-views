@@ -1,0 +1,22 @@
+include ../modules/__mixins
+include ../modules/_variables
+block vars
+doctype html
+html(lang="ru").no-js
+	include includes/head.jade
+	body
+		if(currentPageTitle == "Страница 404")
+			div.container
+				block block-content
+		else
+			div.wrapper
+				include includes/header.jade
+				div.container
+					block block-content
+
+				block block-content-100
+
+			include includes/footer.jade
+
+			//- .pops.js-pops
+			include ../modules/pops.jade

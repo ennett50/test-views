@@ -1,0 +1,33 @@
+-var productsCart = []
+-productsCart[0] = {}
+-productsCart[0].title = '<b>Холодильник</b> Shark LED Digital Date Day Alarm Men Quartz';
+-productsCart[0].discount = '-20%';
+-productsCart[1] = {}
+-productsCart[1].title = '<b>Холодильник</b> Shark LED';
+-productsCart[1].discount = '-40%';
+
+div.row
+	div.col-md-3.col-sm-6.col-xs-12
+		div.actions-catalog
+			a(href="#").actions-catalog-img
+				img(src="images/example/action1_small.png", alt="")
+			div.actions-catalog-desc
+				div.actions-catalog-title Ламповые <br/> вечера
+				p При покупке кресла, <br/>торшер в подарок!
+				a(href="actions.html").button-detail подробнее
+	-for (var i=0;i<5;i++)
+		each item, index in productsCart
+			include product-tpl
+
+	div.col-md-3.col-sm-6.col-xs-12
+		div.actions-catalog.__red
+			a(href="#").actions-catalog-icon
+				img(src="images/icons/icon-actions.png", alt="")
+			div.actions-catalog-desc
+				div.actions-catalog-title Продай <br/> слона
+				p Как продать свои, <br/>шмотки через <br/>наш сервис
+				a(href="actions.html").button-detail подробнее
+
+	-for (var i=0;i<2;i++)
+		each item, index in productsCart
+			include product-tpl

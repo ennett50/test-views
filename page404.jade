@@ -1,0 +1,23 @@
+include modules/__mixins
+include modules/_variables
+block vars
+	-var currentPageTitle = "Страница 404"
+	-var currentMainMenu = "Страница 404"
+
+block title
+	title Страница 404
+
+doctype html
+html(lang="ru").no-js
+	include layouts/includes/head.jade
+	body
+		div.container
+			header.page-error-header
+				a(href="/")
+					img(src="images/big-logo.png" srcset="images/h_logo-mobile_15x.png 1" + ".5x," + "" +
+					"" + " " + "images/h_logo-mobile_2x.png 2x")
+			div.page-error-title
+				img(src="images/bg/404.png", alt="")
+			div.page-error-cnt
+				p.h3 Запрашиваемая страница не найдена или не существует
+				p Проверьте адрес на ошибки или попробуйте начать <a href="/">с главной</a>.

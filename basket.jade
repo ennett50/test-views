@@ -1,0 +1,206 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Ваша корзина"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Корзина'])
+	h1.align-center=currentPageTitle
+	p.align-center Вы не вошли в систему. <a href="#tab-logon" data-tabs="" data-tabs-group="tab-logon" data-toggle="modal" data-target="#js-logon-form">Войдите</a>, чтобы зарезервировать эти товары или увидеть
+		|зарезервированные товары.
+
+	div.row
+		div.col-lg-8
+			form.basket.clearfix(method="" action="")
+				div.basket-header
+					div.basket-img
+					div.basket-product Товар
+					div.basket-price Цена
+				div.basket-item
+					div.basket-img
+						div.basket-sign.__buyout Выкуп
+						img(src="images/example/wl2.jpg", alt="")
+					div.basket-product
+						a(href="#").basket-title <b>Холодильник</b> Bosch KGN
+						p Арт. 000000
+						p
+							| Состояние
+							!="\n"
+							span.products-cart_info_status_stars
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.empty ☆
+						p 3 шт.
+					div.basket-price
+						div.basket-count-left
+							div.basket-price-count
+								| 3 400
+								!='\n'
+								span.ruble i
+								!='\n'
+								|x 3
+						div.basket-count-right
+							div.basket-price-count
+								| 10 200
+								!='\n'
+								span.ruble i
+						div.clear
+						div.basket-count-left.__border
+							div.basket-status.__paid оплачено
+							div.basket-price-cur.__disabled
+								| 1 500
+								!='\n'
+								span.ruble i
+								!='\n'
+								span.basket-discount 30% от цены
+						div.basket-count-right
+							div.basket-status.__pay к оплате
+							div.basket-price-cur
+								| 7 800
+								!='\n'
+								span.ruble i
+								!='\n'
+								span.basket-discount 70% от цены
+						div.clear
+						a(href="#").basket-remove
+
+				div.basket-item
+					div.basket-img
+						img(src="images/example/wl2.jpg", alt="")
+					div.basket-product
+						a(href="#").basket-title <b>Таксодрмия</b> Лисичка почти свежая, ждя хранения
+						p Арт. 000000
+						p
+							| Состояние
+							!="\n"
+							span.products-cart_info_status_stars
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.empty ☆
+						p 345 на складе
+					div.basket-price
+						div.basket-count-left
+							div.basket-price-count
+								| 340
+								!='\n'
+								span.ruble i
+								!='\n'
+								| x
+								!='\n'
+								span.counter.js-counter
+									input(type="text" value="1").counter-text
+									button.counter-btn.__max
+									button.counter-btn.__min
+
+						div.basket-count-right
+							div.basket-price-count
+								| 10 200
+								!='\n'
+								span.ruble i
+						div.clear
+
+						a(href="#").basket-remove
+
+
+				div.basket-item
+					div.basket-img
+						div.basket-sign.__brone Бронь
+						img(src="images/example/wl2.jpg", alt="")
+					div.basket-product
+						a(href="#").basket-title <b>Шкаф</b> Сервант Чершский 1978 года
+						p Арт. 000000
+						p
+							| Состояние
+							!="\n"
+							span.products-cart_info_status_stars
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.full ☆
+								!='\n'
+								span.empty ☆
+						p 100 на складе
+					div.basket-price
+						div.basket-count-left
+							div.basket-price-count
+								| 3 400
+								!='\n'
+								span.ruble i
+								!='\n'
+								|x 1
+						div.basket-count-right
+							div.basket-price-count
+								| 10 200
+								!='\n'
+								span.ruble i
+						div.clear
+						div.basket-count-left.__border
+							div.basket-status.__delivery в течение недели
+							div.basket-price-cur.__disabled
+								| 1 500
+								!='\n'
+								span.ruble i
+								!='\n'
+								span.basket-discount 30% от цены
+						div.basket-count-right
+							div.basket-status.__pay к оплате
+							div.basket-price-cur
+								| 7 800
+								!='\n'
+								span.ruble i
+								!='\n'
+								span.basket-discount 70% от цены
+						div.clear
+						a(href="#").basket-remove
+				div.basket-result
+					div.basket-result-text
+						| Итого:
+						!='\n'
+						span.price
+							| 3 080
+							!='\n'
+							span.ruble i
+					p Цена указана без доставки. Точную сумму доставки уточнят после заполнения адреса места доставки
+					input(type="submit" value="Оформить покупку").button
+					a(href="#").button-reserve Продолжить покупку
+
+
+
+
+		div.col-lg-4
+			div.reserve
+				div.reserve-header Забронированное
+				div.reserve-counter.__one-day.clearfix
+					span(class="js-timers", data-days="1")
+					!="\n"
+					span.reserve-counter-text до выкупа остался <b>1</b> день
+				div.reserve-cnt
+					include modules/reserve-item
+
+				div.reserve-counter.clearfix
+					span(class="js-timers", data-days="3")
+					!="\n"
+					span.reserve-counter-text до выкупа осталось <b>3</b> дня
+				div.reserve-cnt
+					include modules/reserve-item
+
+
+
+
+
+

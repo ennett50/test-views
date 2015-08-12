@@ -1,0 +1,78 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Вход/Регистрация"
+block title
+	title=currentPageTitle
+
+block block-content-100
+	div.tabs-ctn.__page
+		div.modal-title.tabs
+			a(href="#tab-logon-big" class="tabs-item __current" data-tabs="" data-tabs-group="tab-logon-big") Вход
+			span.tabs-sep /
+			a(href="#tab-reg-big" class="tabs-item" data-tabs="" data-tabs-group="tab-reg-big") Регистрация
+		div(id="tab-logon-big" class="tabs-container-item __current" data-tabs-group="tab-logon-big")
+			form(method="POST", action="").form-horizontal.__auth
+				div.form-group
+					label(for="form-email-page" class="control-label form-inline") Электронная почта
+					div.form-group-input
+						input(type="email" class="form-control " id="form-email-page" )
+				div.form-group
+					label(for="form-password-page" class="control-label form-inline") Пароль
+					div.form-group-input
+						input(type="password" class="form-control " id="form-password-page" )
+				div.form-horizontal-btn
+					a(href="#" data-toggle="modal" data-target="#js-remember-password").form-remember забыли пароль?
+					input(type="submit", value="Войти").button
+
+			div.info-reception-choice
+				span Или
+			div.social-logon-ctn
+				div.social-logon-title Войти через социальную сеть
+				div.social-logon.__max-width
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__vk
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__fb
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__ok
+
+		div(id="tab-reg-big" class="tabs-container-item" data-tabs-group="tab-reg-big")
+			form(method="POST", action="").form-horizontal.__reg
+				div.form-group
+					label(for="form-email-reg-page" class="control-label form-inline") Электронная почта
+					div.form-group-input
+						input(type="email" class="form-control __middle" id="form-email-reg-page" )
+				div.form-group
+					label(for="form-name-reg-page" class="control-label form-inline") Ваше имя
+					div.form-group-input
+						input(type="text" class="form-control " id="form-name-reg-page" )
+				div.form-group
+					label(for="form-password-reg-page" class="control-label form-inline") Пароль
+					div.form-group-input
+						input(type="password" class="form-control __middle" id="form-password-reg-page" )
+						div.form-info Минимум 6 символов
+				div.form-group
+					label(for="form-password-again-reg-page" class="control-label form-inline") Повторите пароль
+					div.form-group-input
+						input(type="password" class="form-control __middle" id="form-password-again-reg-page" )
+
+				div.form-horizontal-btn
+					input(type="submit", value="Зарегистрироваться").button
+
+
+
+			div.info-reception-choice
+				span Или
+			div.social-logon-ctn
+				div.social-logon-title Зарегистрироваться с использованием социальной сети
+				div.social-logon.__max-width
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__vk
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__fb
+					div.social-logon-item
+						a(href="#", target="_blank").social-links-item.__ok
+
+	div.container
+		div.text-just
+			div.width-50-auto Создавая личный кабинет, вы соглашаетесь с нашими <a href="conditions.html">Правилами и условиями</a>

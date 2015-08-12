@@ -1,0 +1,30 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Результаты поиска"
+	-var currentMainMenu = "Результаты поиска"
+block title
+	title=currentPageTitle
+block block-content-100
+	div.search-result
+		div.container.filter-catalog.clearfix
+			div.left
+				div.search-result-text По запросу «<b>Холодильник Shark LED...</b>» не найдено результатов
+
+
+	div.container.search-result-error
+		h3 По вашему запросу ничего не найдено
+
+		p Проверьте ваш запрос на ошибки или переформуируйте его.
+
+	div.discount-products
+		div.container
+			div.new-products
+				div.h1 Новое поступление
+
+				-var discount = true
+
+				div.row
+					include modules/products-cart
+
+				div.btn-w
+					a.button-info(href='#') больше новинок

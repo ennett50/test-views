@@ -1,0 +1,45 @@
+-var basketProducts = []
+-basketProducts[0] = {}
+-basketProducts[0].title = '<b>Холодильник</b> SH105 Analog Digital LED...'
+-basketProducts[0].price = '20 000'
+-basketProducts[0].oldPrice = '30 000'
+-basketProducts[0].img = 'wl1.jpg'
+-basketProducts[1] = {}
+-basketProducts[1].title = '<b>Антикварный сервант</b> 4 века в...'
+-basketProducts[1].price = '700'
+-basketProducts[1].img = 'wl2.jpg'
+-basketProducts[2] = {}
+-basketProducts[2].title = '<b>Холодильник</b> SH105 Analog Digital LED...'
+-basketProducts[2].price = '20 000'
+-basketProducts[2].oldPrice = '30 000'
+-basketProducts[2].img = 'wl1.jpg'
+-basketProducts[3] = {}
+-basketProducts[3].title = '<b>Антикварный сервант</b> 4 века в...'
+-basketProducts[3].price = '700'
+-basketProducts[3].img = 'wl2.jpg'
+div.modal.fade#js-product-in-basket.js-modal
+	div.modal-dialog
+		div.modal-content.modal-body.basket-modal
+
+			h4 Товар добавлен в корзину!
+			div.basket-list
+				each item, index in basketProducts
+					div.basket-list-item.clearfix(class="#{ index == 0 ? '__current' : '' }")
+						a(href="#").basket-list-img
+							!='\n'
+							img.img-responsive(src='images/example/#{item.img}', alt="")
+						div.basket-list-desc
+							a(href="#").basket-list-title!=item.title
+							!='\n'
+							div.basket-list-price
+								!=item.price
+								!='\n'
+								span.ruble i
+							a(href="#").basket-list-remove
+			div.basket-list-other.clearfix
+				a(href="#").right другие 1 уже в корзине
+
+
+			div.basket-list-btn.clearfix
+				span.left.falseLink(data-dismiss='modal', aria-label='Close') продолжить покупки
+				a(href="#").button.right В корзину

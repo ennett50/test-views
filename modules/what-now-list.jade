@@ -1,0 +1,23 @@
+-var watchNow = []
+-watchNow[0] = {}
+-watchNow[0].title = '<b>Холодильник</b> SH105 Analog Digital LED...'
+-watchNow[0].price = '20 000'
+-watchNow[0].oldPrice = '30 000'
+-watchNow[1] = {}
+-watchNow[1].title = '<b>Антикварный сервант</b> 4 века в...'
+-watchNow[1].price = '700'
+
+ul.watch-now-list.clearfix.list-unstyled
+	-for (var i=0;i<2;i++)
+		each item, index in watchNow
+			li.watch-now-item.clearfix
+				a(href="product-card .html").watch-now-img
+					!='\n'
+					img.img-responsive(src='images/example/wl#{index+1}.jpg', alt="")
+				div.watch-now-desc
+					a(href="product-card .html").watch-now-title!=item.title
+					!='\n'
+					a(href="product-card .html").button.__mini.__arrow
+						!=item.price
+						!='\n'
+						span.ruble i

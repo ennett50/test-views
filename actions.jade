@@ -1,0 +1,17 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Акции"
+	-var currentMainMenu = "Акции"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple([currentPageTitle])
+	h1 Акции
+
+block block-content-100
+
+	include modules/list-actions
+
+	div.discount-products
+		div.container
+			include modules/discount-products

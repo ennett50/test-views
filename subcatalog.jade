@@ -1,0 +1,34 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Каталог"
+	-var currentMainMenu = "Каталог"
+	-var catalogSubmenu = 'Бытовая техника'
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Каталог', catalogSubmenu])
+	include modules/submenu
+	div.heading
+		img(src="images/icons/appliances.png", alt="").heading-img
+		h1 Бытовая техника
+	div.filter-catalog.align-right
+		input(type="checkbox", name="" id="product-discount")
+		label(for="product-discount") товары только со скидкой
+		div.filter-catalog-min_max
+			span фильтр:
+			!='\n'
+			a(href="#").falseLink.filter-catalog-item.__active по дате
+			!='\n'
+			span.filter-catalog-sep |
+			!='\n'
+			a(href="#").falseLink.filter-catalog-item по цене
+
+	include modules/catalog-list
+
+
+block block-content-100
+	include modules/pagination
+	div.container
+		div.text-just.__font-16
+			div.width-50-auto
+				p Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени. Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени.Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени.

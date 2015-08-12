@@ -1,0 +1,37 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Контакты"
+	-var currentMainMenu = "Контакты"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple([currentPageTitle])
+	h1 Контакты
+	div.row
+		div.col-lg-5.contacts.col-md-5.js-content-address
+			div.contacts-info.js-change-map.__current
+				i.icon-maps
+				div.contacts-info-desc
+					div.contacts-info-title Откуда забирать мебель (физический адрес)
+					p.js-address Санкт-Петербург, Балтийская, 56
+			div.contacts-info.js-change-map
+				i.icon-maps
+				div.contacts-info-desc
+					div.contacts-info-title Куда писать письма (юридический адрес)
+					p ООО "Вторая жизнь" — 190020,<span class="js-address">Санкт-Петербург, <nobr>пр-кт</nobr>
+						|Рижский,60 А, пом.1-Н</span>
+		div.col-lg-7.col-md-7
+			div.contacts-map
+				div#map.map
+
+block block-content-100
+	div.contacts-links
+		div.contacts-links-ctn.table
+			div.table-cell
+				div.contacts-links-title Телефон
+				a(href="tel:+78657770707").contacts-links-phone 8(865) 777 07 07
+			div.table-cell
+				div.contacts-links-title Электронная почта
+				a(href="mailto:korobeinikoff@ya.ru").contacts-links-mail korobeinikoff@ya.ru
+	div.pattern-bg
+		include modules/form-feedback

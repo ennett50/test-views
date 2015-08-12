@@ -1,0 +1,66 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Оформление покупки"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Корзина', currentPageTitle])
+	h1.align-center Оформление покупки
+	p.align-center Вы не вошли в систему. <a href="#">Войдите</a>, чтобы зарезервировать эти товары или увидеть
+		|зарезервированные товары.
+
+	div.checkout
+		form.form-horizontal(method="", action="")
+			div.checkout-item
+				div.form-group.has-error
+					label(for="form-checkout-name" class="control-label form-inline") Ваше имя и фамилия
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-name" )
+				div.form-group
+					label(for="form-checkout-phone" class="control-label form-inline") Контакный телефон
+					div.form-group-input
+						input(type="text" class="form-control " id="form-checkout-phone" ).js-phone-mask.small-control
+				div.form-group
+					label(for="form-checkout-mail" class="control-label form-inline") Электронаня почта
+					div.form-group-input
+						input(type="email" class="form-control " id="form-checkout-mail" ).small-control
+
+			div.checkout-item
+				div.form-group
+					span(class="control-label form-inline") Способ доставки
+					div.form-group-input.__inline
+						input(type="radio", name="type-delivery" id="type-delivery-1" checked="")
+						label(for="type-delivery-1") Службой грузоперевозок
+						input(type="radio", name="type-delivery" id="type-delivery-2")
+						label(for="type-delivery-2") Самовывоз
+				div.form-group.has-error
+					label(for="form-checkout-area" class="control-label form-inline") Район
+					div.form-group-input
+						select(id="form-checkout-area").form-control
+							option
+							option Адмиралтейский район (400 руб.)
+							option Кировский район (800 руб.)
+
+			div.checkout-item
+				div.form-group
+					span(class="control-label form-inline") Способ оплаты
+					div.form-group-input
+						div.form-item
+							input(type="radio", name="type-payment" id="type-payment-1" checked="")
+							label(for="type-payment-1") Банковской картой при получении
+						div.form-item
+							input(type="radio", name="type-payment" id="type-payment-2")
+							label(for="type-payment-2") Наличными при получении
+						div.form-item
+							input(type="radio", name="type-payment" id="type-payment-3")
+							label(for="type-payment-3") Онлайн оплата
+						div.form-item
+							input(type="radio", name="type-payment" id="type-payment-4")
+							label(for="type-payment-4") Безналичный расчет (для юр. лиц)
+			div.checkout-item
+				div.form-group
+					label(for="form-checkout-text" class="control-label form-inline") Примечание к заказу
+					div.form-group-input
+						textarea(id="form-checkout-text").form-control
+				div.checkout-btn
+					input(type="submit", value="Оформить покупку").button

@@ -1,0 +1,97 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Карточка товара"
+	-var currentMainMenu = ""
+block title
+	title=currentPageTitle
+
+block block-content
+	+breadcrumbsSimple(['Бытовая техника', 'Холодильник Bosch KGN 36VL10 Indesit BIA 18 S Indesit BIA 18 S'])
+	div.row
+		div.col-lg-5.col-md-6
+			include modules/product-gallery
+
+			include modules/product-info
+		div.col-lg-7.col-md-6.product-cart
+			div.product-cart-ctn
+				h1 Холодильник Bosch KGN 36VL10 Indesit BIA 18 S Indesit BIA 18 S
+				div.product-cart-info
+					p Арт. 000000
+					p Товар учавствует в акции <a href="#91">«Чешский гарнитур», «Бесплатная доставка кухонного
+						|гарнитура»</a>
+					p
+						span.title Состояние
+						!='\n'
+						span.products-cart_info_status_stars
+							span.full ☆
+							!='\n'
+							span.full ☆
+							!='\n'
+							span.full ☆
+							!='\n'
+							span.full ☆
+							!='\n'
+							span.empty ☆
+					p
+						span.title Количество
+						!='\n'
+						span.counter.js-counter
+							input(type="text" value="0").counter-text
+							button.counter-btn.__max
+							button.counter-btn.__min
+						!='\n'
+						span.counter-exists 2 в наличии
+
+
+
+
+				include modules/social-follow
+
+			div.sign-block.__white
+				div.product-cart-title Цена
+				div.products-cart_price
+					div.product-cart_price-current
+						| 30 000
+						span.ruble i
+					span.old
+						| 30 000
+						span.ruble i
+
+				div.product-cart-events
+					a(href="#" data-toggle="modal" data-target="#js-product-in-basket").button В корзину
+					div.product-cart-events-i
+						a(href="#" data-toggle="modal" data-target="#js-brone-product").button-reserve Забронировать
+						div.falseLink(title="Информация о бронировании" data-toggle="modal" data-target="#js-default-popup") ?
+
+
+			div.sign-block
+				div.product-cart-title Доставка
+				div.products-cart_price
+					span.product-cart-delivery
+						| 3 000
+						span.ruble i
+
+				div.product-cart-events
+					span Самовывоз
+					!='\n'
+					span.falseLink(data-toggle="modal" data-target="#js-default-popup") бесплатно
+
+
+			div.sign-block.__white
+				p Подробнее о самой модели и ее недостатках (ведь она б/у):
+				ul
+					li что-то отломилось;
+					li что-то надорвалось;
+					li но мы честные и вы можете намдоверять;
+					li а вот авито и сомнительным ребята доверять не стоит, это все знают.
+
+
+block block-content-100
+	div.discount-products
+		div.container
+			include modules/discount-products
+
+
+
+
+

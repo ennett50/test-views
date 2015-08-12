@@ -1,0 +1,83 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Приемка"
+	-var currentMainMenu = "Приемка"
+block title
+	title=currentPageTitle
+block block-content
+	+breadcrumbsSimple(['Приемка'])
+
+
+block block-content-100
+	div.items-list.info-reception
+		div.container
+			div.h1 Приемка
+			div.info-reception-ctn
+				div.info-reception-item
+						div.info-reception-img
+							img(src="images/reception/1.png" alt="")
+						div.info-reception-title Хотите продать ненужное?
+
+				div.info-reception-item
+					div.info-reception-img
+						img(src="images/reception/2.png" alt="")
+					div.info-reception-title Заполните <a href="reception-form.html">форму</a> и приложите фото
+
+
+				div.info-reception-item
+					div.info-reception-img
+						img(src="images/reception/3.png" alt="")
+					div.info-reception-title Мы озвучим примерную стоимость
+
+
+	div.items-list.info-reception
+		div.container
+			div.h1 Транспортировка
+			div.info-reception-ctn
+				div.info-reception-item.__small.__hide-arrow
+					div.info-reception-img
+						img(src="images/reception/4.png" alt="")
+					div.info-reception-title Вы можете самостоятельно<br/> привезти товар на наш склад
+				div.info-reception-item.__sign или
+				div.info-reception-item.__small.__hide-arrow
+					div.info-reception-img
+						img(src="images/reception/5.png" alt="")
+					div.info-reception-title Мы сами заберём товар от Вас
+
+
+	div.items-list.info-reception
+		div.container
+			div.h1 Транспортировка
+			div.info-reception-ctn
+				div.info-reception-item.__middle
+					div.info-reception-img
+						img(src="images/reception/6.png" alt="")
+					div.info-reception-title Мы предлагаем цену
+
+				div.info-reception-item.__middle
+					div.info-reception-img
+						img(src="images/reception/7.png" alt="")
+					div.info-reception-title Если цена Вас устраивает - <br/>мы покупаем
+			div.info-reception-choice
+				span Или
+	div.items-list.info-reception
+		div.container
+			div.info-reception-ctn
+				div.info-reception-item
+					div.info-reception-img
+						img(src="images/reception/8.png" alt="")
+					div.info-reception-title Вы назначаете цену
+
+				div.info-reception-item
+					div.info-reception-img
+						img(src="images/reception/9.png" alt="")
+					div.info-reception-title Предмет публикуется на сайте
+
+
+				div.info-reception-item
+					div.info-reception-img
+						img(src="images/reception/7.png" alt="")
+					div.info-reception-title После продажи Вы получаете деньги за вычетом комиссии
+	div.items-list.info-reception
+		div.container.text-left
+			p Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени. Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени.Некоторый текст для приветсвия и чтобы пользователь понимал что сайт настоящий, информация актуальная и что здесь ему рады. Может он и не совершит покупку сегодня, но приятные впечатления останутся и он вернется сюда в скором времени.

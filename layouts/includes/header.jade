@@ -1,0 +1,125 @@
+header.header.js-header
+	.header-top
+		.container
+			.row
+				.col-xs-12.visible-xs-block.header-logo-mobile_w
+					if(currentPageTitle == 'Главная')
+						span.header-logo-mobile
+							img.img-responsive(src="images/h_logo-mobile.png" srcset="images/h_logo-mobile_15x.png 1.5x, images/h_logo-mobile_2x.png 2x")
+					else
+						a.header-logo-mobile(href='main.html')
+							img.img-responsive(src="images/h_logo-mobile.png" srcset="images/h_logo-mobile_15x.png 1.5x, images/h_logo-mobile_2x.png 2x")
+
+				.col-md-10.col-xs-12
+					nav.main-nav.__header.collapse(aria-expanded='false').js-main-toogle
+						div.main-nav-bg
+							div.main-nav-icon(data-toggle="collapse").js-main-nav
+
+						-var mainMenu = []
+						-mainMenu[0] = {}
+						-mainMenu[0].title = 'О компании'
+						-mainMenu[0].href = 'about.html'
+
+						-mainMenu[1] = {}
+						-mainMenu[1].title = 'Каталог'
+						-mainMenu[1].href = 'catalog.html'
+
+						-mainMenu[2] = {}
+						-mainMenu[2].title = 'Акции'
+						-mainMenu[2].href = 'actions.html'
+
+						-mainMenu[3] = {}
+						-mainMenu[3].title = 'Оплата'
+						-mainMenu[3].href = 'payment.html'
+
+						-mainMenu[4] = {}
+						-mainMenu[4].title = 'Доставка'
+						-mainMenu[4].href = 'delivery.html'
+
+						-mainMenu[5] = {}
+						-mainMenu[5].title = 'Приемка'
+						-mainMenu[5].href = 'reception.html'
+
+						-mainMenu[6] = {}
+						-mainMenu[6].title = 'Контакты'
+						-mainMenu[6].href = 'contacts.html'
+
+						ul.clearfix.list-unstyled.main-nav-list(aria-expanded = 'true')
+							each item in mainMenu
+								li.main-nav-item
+									if item.title == currentMainMenu
+										span.main-nav-link.__current= item.title
+									else
+										a(href='#{item.href}').main-nav-link= item.title
+
+				.col-md-2
+					.header-phone_w
+						a.header-phone(href='tel:+78657770707') <span>8 (865)</span> 777 07 07
+						div.header-callback.hidden-xs(data-toggle="modal" data-target="#js-feedback-form")
+							span.falseLink Обратный звонок
+					if (currentPageTitle == "Личный кабинет")
+						div.header-auth-img
+							a(href="#")
+								img(src="images/example/user.png", alt="")
+					else
+						div.header-auth-icon
+							a(href="#tab-logon" data-tabs="" data-tabs-group="tab-logon" data-toggle="modal"
+							data-target="#js-logon-form")
+
+
+	div.header-middle
+		div.container
+			div.row
+				div.col-lg-3.col-md-3.col-sm-4.hidden-xs
+					if(currentPageTitle == 'Главная')
+						span.header-logo(href='#')
+							img.img-responsive.hidden-sm(src='images/h_logo.png', alt="")
+							img.img-responsive.hidden-md.hidden-lg(src='images/h_logo_mini.png', alt="")
+					else
+						a.header-logo(href='main.html')
+							img.img-responsive.hidden-sm(src='images/h_logo.png', alt="")
+							img.img-responsive.hidden-md.hidden-lg(src='images/h_logo_mini.png', alt="")
+				div.col-lg-4.col-md-3.col-sm-12.form-search-mobile
+					form.form.header-search
+						.form_field.clearfix
+							.form_field_it
+								i.ic-search
+								!='\n'
+								input(type='text', required='required', value='', placeholder='поиск по товарам')
+				div.col-lg-5.col-md-6.header-info
+					a.header-phone.hidden-lg.hidden-md(href='tel:+78657770707')
+					div.header-auth
+						span.header-auth-info Добро пожаловать в наш магазин!
+						div.header-auth-login
+							if (currentPageTitle == "Личный кабинет")
+								a(href="personal-page.html").header-auth-user Имя Пользователя
+								!='\n'
+								span.header-sep |
+								a(href="main.html").header-auth-out Выход
+							else
+								a(href="#tab-logon" data-tabs="" data-tabs-group="tab-logon" data-toggle="modal" data-target="#js-logon-form").header-auth-sing войти
+								!='\n'
+								span.header-sep |
+								!='\n'
+								a.header-auth-reg(href='#tab-reg' data-tabs="" data-tabs-group="tab-reg" data-toggle="modal" data-target="#js-logon-form")
+									|регистрация
+					div.user-info
+						if(currentPageTitle == "Помощь")
+							span.user-info_help Помощь
+						else
+							a.user-info_help(href='help.html') Помощь
+						!='\n'
+						span.header-sep |
+						!='\n'
+						a.user-info_cart(href='basket.html')
+							| Корзина&nbsp;
+							span.user-info_cart_sum 100 000
+							!='\n'
+							span.ruble i
+							|  (<span class="user-info_cart-counter">5</span> вещей)
+
+
+
+
+
+

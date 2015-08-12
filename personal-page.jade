@@ -1,0 +1,80 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Личный кабинет"
+
+block title
+	title=currentPageTitle
+
+
+block block-content
+	h1.text-center Личный кабинет
+	div.cabinet
+		div.cabinet-popup-edit
+			div.cabinet-popup-hide.js-hide-edit
+			form(method="" action="")
+				div.cabinet-popup-img
+					input(type="file" name="upload" id="js-upload").js-upload
+					div.cabinet-img
+						img(src="images/example/user.png" alt="")
+					div.cabinet-popup-info Вес изображений до 10 МБ
+				div.cabinet-popup-form.form-horizontal
+					div.form-group
+						label(for="cabinet-name" class="control-label form-inline") ФИО
+						div.form-group-input
+							input(type="text" class="form-control " id="cabinet-name" )
+					div.form-group
+						label(for="cabinet-email" class="control-label form-inline") Электронная почта
+						div.form-group-input
+							input(type="email" class="form-control " id="cabinet-email" )
+					div.form-group
+						label(for="cabinet-phone" class="control-label form-inline") Номер телефона
+						div.form-group-input
+							input(type="text" class="form-control " id="cabinet-phone" ).js-phone-mask
+				div.clear
+				div.form-horizontal-btn
+					input(type="submit", value="Сохранить изменения").button
+		div.cabinet-profile
+			div.cabinet-edit.js-edit
+			div.cabinet-img
+				img(src="images/example/user.png" alt="")
+			div.cabinet-desc
+				div.cabinet-name Иванов Иван Иванович
+				div.cabinet-mail ivanov_ivan@gmail.ru
+				div.cabinet-phone +7(924) 197 54 43
+			div.clear
+
+
+
+block block-content-100
+	div.light-bg-text.cabinet-links
+		a(href="#").button продать свой предмет
+		!="\n"
+		div.button.js-change-password сменить пароль
+		form(method="" action="").form-horizontal.cabinet-change-password
+			div.h3 Сменить пароль
+			div.form-group
+				label(for="password-current" class="control-label form-inline") Текущий пароль
+				div.form-group-input
+					input(type="password" class="form-control " id="password-current" )
+
+			div.form-group
+				label(for="password-new" class="control-label form-inline") Новый пароль
+				div.form-group-input
+					input(type="password" class="form-control " id="password-new" )
+					div.form-info Минимум 6 символов
+			div.form-group
+				label(for="password-repeat" class="control-label form-inline") Повторите пароль
+				div.form-group-input
+					input(type="password" class="form-control " id="password-repeat" )
+
+			div.form-horizontal-btn
+				input(type="submit", value="Изменить пароль").button
+		div.cabinet-links-nav
+			div.cabinet-links-item
+				a(href="#") Забронированное
+			div.cabinet-links-item
+				a(href="#") Список моих заказов
+			div.cabinet-links-item
+				a(href="#") Список моих продаж
+
+
